@@ -25,22 +25,22 @@
         /// </summary>
         /// <param name="text">The text</param>
         [HttpPut("RepeatedWords")]
-        [ProducesResponseType((int) HttpStatusCode.BadRequest)]
-        [ProducesResponseType((int) HttpStatusCode.InternalServerError)]
-        [ProducesResponseType(typeof(ResponseService),(int) HttpStatusCode.OK)]
-        [Produces(MediaTypeNames.Application.Json, Type = typeof(string))]
-        public IActionResult GetRepeatedWords([FromBody] string text)
+        [ProducesResponseType((int)HttpStatusCode.BadRequest)]
+        [ProducesResponseType((int)HttpStatusCode.InternalServerError)]
+        [ProducesResponseType(typeof(ResponseService), (int)HttpStatusCode.OK)]
+        [Produces(MediaTypeNames.Application.Json, Type = typeof(TextRequestDto))]
+        public IActionResult PutRepeatedWords([FromBody] TextRequestDto text)
         {
             ResponseService response = new ResponseService();
             try
             {
-                response = _service.GetRepeatedWords(text);
+                response = _service.PutRepeatedWords(text);
 
                 return response.Status ? Ok(response) : (IActionResult)BadRequest(response);
             }
             catch (Exception ex)
             {
-                response.Message = $"{nameof(GetRepeatedWords)}: {ex.Message}";
+                response.Message = $"{nameof(PutRepeatedWords)}: {ex.Message}";
 
                 return StatusCode(StatusCodes.Status500InternalServerError, response);
             }

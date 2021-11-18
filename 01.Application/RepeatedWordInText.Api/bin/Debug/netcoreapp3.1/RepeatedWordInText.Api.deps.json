@@ -24,6 +24,9 @@
     ".NETCoreApp,Version=v3.1": {
       "RepeatedWordInText.Api/1.0.0": {
         "dependencies": {
+          "RepeatedWordInText.AplicationCore": "1.0.0",
+          "Swashbuckle.AspNetCore.SwaggerGen": "6.2.2",
+          "Swashbuckle.AspNetCore.SwaggerUI": "6.2.2",
           "Microsoft.AspNetCore.Antiforgery": "3.1.0.0",
           "Microsoft.AspNetCore.Authentication.Abstractions": "3.1.0.0",
           "Microsoft.AspNetCore.Authentication.Cookies": "3.1.0.0",
@@ -312,6 +315,64 @@
         },
         "compile": {
           "RepeatedWordInText.Api.dll": {}
+        }
+      },
+      "Microsoft.OpenApi/1.2.3": {
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.OpenApi.dll": {
+            "assemblyVersion": "1.2.3.0",
+            "fileVersion": "1.2.3.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.OpenApi.dll": {}
+        }
+      },
+      "Swashbuckle.AspNetCore.Swagger/6.2.2": {
+        "dependencies": {
+          "Microsoft.OpenApi": "1.2.3"
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/Swashbuckle.AspNetCore.Swagger.dll": {
+            "assemblyVersion": "6.2.2.0",
+            "fileVersion": "6.2.2.0"
+          }
+        },
+        "compile": {
+          "lib/netcoreapp3.0/Swashbuckle.AspNetCore.Swagger.dll": {}
+        }
+      },
+      "Swashbuckle.AspNetCore.SwaggerGen/6.2.2": {
+        "dependencies": {
+          "Swashbuckle.AspNetCore.Swagger": "6.2.2"
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/Swashbuckle.AspNetCore.SwaggerGen.dll": {
+            "assemblyVersion": "6.2.2.0",
+            "fileVersion": "6.2.2.0"
+          }
+        },
+        "compile": {
+          "lib/netcoreapp3.0/Swashbuckle.AspNetCore.SwaggerGen.dll": {}
+        }
+      },
+      "Swashbuckle.AspNetCore.SwaggerUI/6.2.2": {
+        "runtime": {
+          "lib/netcoreapp3.0/Swashbuckle.AspNetCore.SwaggerUI.dll": {
+            "assemblyVersion": "6.2.2.0",
+            "fileVersion": "6.2.2.0"
+          }
+        },
+        "compile": {
+          "lib/netcoreapp3.0/Swashbuckle.AspNetCore.SwaggerUI.dll": {}
+        }
+      },
+      "RepeatedWordInText.AplicationCore/1.0.0": {
+        "runtime": {
+          "RepeatedWordInText.AplicationCore.dll": {}
+        },
+        "compile": {
+          "RepeatedWordInText.AplicationCore.dll": {}
         }
       },
       "Microsoft.AspNetCore.Antiforgery/3.1.0.0": {
@@ -2010,6 +2071,39 @@
   },
   "libraries": {
     "RepeatedWordInText.Api/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Microsoft.OpenApi/1.2.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Nug3rO+7Kl5/SBAadzSMAVgqDlfGjJZ0GenQrLywJ84XGKO0uRqkunz5Wyl0SDwcR71bAATXvSdbdzPrYRYKGw==",
+      "path": "microsoft.openapi/1.2.3",
+      "hashPath": "microsoft.openapi.1.2.3.nupkg.sha512"
+    },
+    "Swashbuckle.AspNetCore.Swagger/6.2.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-o8UV8yecriMfHTFx1elrltamuSv36g5KtofKtsb1VZ/xHuFADUSBvNzdTZzSy4igBf06+dmimh3oM/JeMPkL3g==",
+      "path": "swashbuckle.aspnetcore.swagger/6.2.2",
+      "hashPath": "swashbuckle.aspnetcore.swagger.6.2.2.nupkg.sha512"
+    },
+    "Swashbuckle.AspNetCore.SwaggerGen/6.2.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-GktBI7JHN4XFYwDM5ZTD5IbBYxVYZ7y7lFs6F3PgESwn2SPLyoLxJsWSi3ozDK3fB6aKcHgY90gHtezbbfW2iw==",
+      "path": "swashbuckle.aspnetcore.swaggergen/6.2.2",
+      "hashPath": "swashbuckle.aspnetcore.swaggergen.6.2.2.nupkg.sha512"
+    },
+    "Swashbuckle.AspNetCore.SwaggerUI/6.2.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-wGrglgunEydAGuUvETBRytvFvhEhwFRuY0Qu1rK+axZfFNfRSFRdlqg+vhT4OLOCJpfReSX47jLCYu56c5RsFg==",
+      "path": "swashbuckle.aspnetcore.swaggerui/6.2.2",
+      "hashPath": "swashbuckle.aspnetcore.swaggerui.6.2.2.nupkg.sha512"
+    },
+    "RepeatedWordInText.AplicationCore/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

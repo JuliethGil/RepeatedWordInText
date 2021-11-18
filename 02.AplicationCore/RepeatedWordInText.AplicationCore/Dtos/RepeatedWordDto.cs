@@ -2,7 +2,7 @@
 {
     public class RepeatedWordDto
     {
-        public int NumberOfRepetitions { get; set; }
         public string Word { get; set; }
+        public int NumberOfRepetitions { get; set; }
     }
 }

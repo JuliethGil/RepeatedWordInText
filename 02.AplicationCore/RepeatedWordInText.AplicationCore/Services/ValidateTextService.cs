@@ -4,35 +4,35 @@
     using RepeatedWordInText.AplicationCore.Interfaces;
     using System;
     using System.Collections.Generic;
+    using System.Linq;
     using System.Threading.Tasks;
+    using static RepeatedWordInText.AplicationCore.Enums.StatusEnum;
 
     public class ValidateTextService : IValidateTextService
     {
 
         public ValidateTextService() { }
 
-        public ResponseService GetRepeatedWords(string text)
+        public ResponseService PutRepeatedWords(TextRequestDto text)
         {
             ResponseService response = new ResponseService();
             try
             {
-                if (string.IsNullOrEmpty(text))
+                if (text == null || string.IsNullOrEmpty(text.Text))
                 {
                     response.Message = "The text is empty";
 
                     return response;
                 }
-
-                List<RepeatedWordDto> repeatedWords = GetWordReated(text);
-
-                response.Data = repeatedWords;
+                response.Data = GetWordReated(text.Text);
+                response.Message = Status.sucessful.ToString();
                 response.Status = true;
 
                 return response;
             }
             catch (Exception ex)
             {
-                response.Message = "Internal server error.";
+                response.Message = $"{nameof(PutRepeatedWords)}: {ex.Message}";
 
                 return response;
             }
@@ -40,7 +40,21 @@
 
         private List<RepeatedWordDto> GetWordReated(string text)
         {
-            throw new NotImplementedException();
+            string wordClean = text.ToUpper().Replace(".", "").Replace(",", "").Replace(";", "");
+            List<string> words = wordClean.Split(' ').ToList();
+            List<string> distinctWords = words.Distinct().ToList();
+            List<RepeatedWordDto> repeatedWordsDto = new List<RepeatedWordDto>();
+            foreach (string word in distinctWords)
+            {
+                RepeatedWordDto repeatedWordDto = new RepeatedWordDto
+                {
+                    Word = word,
+                    NumberOfRepetitions = words.Count(x => x == word)
+                };
+                repeatedWordsDto.Add(repeatedWordDto);
+            }
+
+            return repeatedWordsDto;
         }
     }
 }
