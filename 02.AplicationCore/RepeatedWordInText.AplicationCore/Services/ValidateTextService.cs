@@ -16,32 +16,23 @@
         public ResponseService PutRepeatedWords(TextRequestDto text)
         {
             ResponseService response = new ResponseService();
-            try
+            if (text == null || string.IsNullOrEmpty(text.Text))
             {
-                if (text == null || string.IsNullOrEmpty(text.Text))
-                {
-                    response.Message = "The text is empty";
-
-                    return response;
-                }
-                response.Data = GetWordReated(text.Text);
-                response.Message = Status.sucessful.ToString();
-                response.Status = true;
+                response.Message = "The text is empty";
 
                 return response;
             }
-            catch (Exception ex)
-            {
-                response.Message = $"{nameof(PutRepeatedWords)}: {ex.Message}";
+            response.Data = GetWordReated(text.Text);
+            response.Message = Status.sucessful.ToString();
+            response.Status = true;
 
-                return response;
-            }
+            return response;
         }
 
         private List<RepeatedWordDto> GetWordReated(string text)
         {
-            string wordClean = text.ToUpper().Replace(".", "").Replace(",", "").Replace(";", "");
-            List<string> words = wordClean.Split(' ').ToList();
+            string TextClean = text.ToUpper().Replace(".", "").Replace(",", "").Replace(";", "");
+            List<string> words = TextClean.Split(' ').ToList();
             List<string> distinctWords = words.Distinct().ToList();
             List<RepeatedWordDto> repeatedWordsDto = new List<RepeatedWordDto>();
             foreach (string word in distinctWords)

@@ -1,7 +1,6 @@
 C:\Proyectos\RepeatedWordInText\02.AplicationCore\RepeatedWordInText.AplicationCore\bin\Debug\netcoreapp3.1\RepeatedWordInText.AplicationCore.deps.json
 C:\Proyectos\RepeatedWordInText\02.AplicationCore\RepeatedWordInText.AplicationCore\bin\Debug\netcoreapp3.1\RepeatedWordInText.AplicationCore.dll
 C:\Proyectos\RepeatedWordInText\02.AplicationCore\RepeatedWordInText.AplicationCore\bin\Debug\netcoreapp3.1\RepeatedWordInText.AplicationCore.pdb
-C:\Proyectos\RepeatedWordInText\02.AplicationCore\RepeatedWordInText.AplicationCore\obj\Debug\netcoreapp3.1\RepeatedWordInText.AplicationCore.csprojAssemblyReference.cache
 C:\Proyectos\RepeatedWordInText\02.AplicationCore\RepeatedWordInText.AplicationCore\obj\Debug\netcoreapp3.1\RepeatedWordInText.AplicationCore.AssemblyInfoInputs.cache
 C:\Proyectos\RepeatedWordInText\02.AplicationCore\RepeatedWordInText.AplicationCore\obj\Debug\netcoreapp3.1\RepeatedWordInText.AplicationCore.AssemblyInfo.cs
 C:\Proyectos\RepeatedWordInText\02.AplicationCore\RepeatedWordInText.AplicationCore\obj\Debug\netcoreapp3.1\RepeatedWordInText.AplicationCore.csproj.CoreCompileInputs.cache
