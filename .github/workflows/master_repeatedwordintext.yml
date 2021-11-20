@@ -53,5 +53,5 @@ jobs:
         with:
           app-name: 'RepeatedWordInText'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_3004B278B4D24E5FAC7C0258BB115D06 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_EB847C55180E4147A3790EFE5B9C4A32 }}
           package: .
