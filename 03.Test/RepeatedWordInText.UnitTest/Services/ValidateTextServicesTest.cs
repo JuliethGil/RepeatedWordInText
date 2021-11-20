@@ -17,7 +17,7 @@
         public void Put_ReturnsResponseService_WhenTextEmpy()
         {
             var service = Service();
-            var result = service.PutRepeatedWords(ValidateTextStub.TextRequestDtoError);
+            var result = service.PostRepeatedWords(ValidateTextStub.TextRequestDtoError);
 
             Assert.IsFalse(result.Status);
             Assert.AreEqual("The text is empty", result.Message);
@@ -27,7 +27,7 @@
         public void Put_ReturnsResponseService_WhenExistsData()
         {
             var service = Service();
-            var result = service.PutRepeatedWords(ValidateTextStub.TextRequestDto);
+            var result = service.PostRepeatedWords(ValidateTextStub.TextRequestDto);
             
             Assert.IsTrue(result.Status);
             Assert.AreEqual(Status.sucessful.ToString(), result.Message);

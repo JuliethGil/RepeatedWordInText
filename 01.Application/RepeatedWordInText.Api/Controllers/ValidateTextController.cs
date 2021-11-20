@@ -24,23 +24,23 @@
         /// Get the words in a text 
         /// </summary>
         /// <param name="text">The text</param>
-        [HttpPut("RepeatedWords")]
+        [HttpPost("RepeatedWords")]
         [ProducesResponseType((int)HttpStatusCode.BadRequest)]
         [ProducesResponseType((int)HttpStatusCode.InternalServerError)]
         [ProducesResponseType(typeof(ResponseService), (int)HttpStatusCode.OK)]
         [Produces(MediaTypeNames.Application.Json, Type = typeof(TextRequestDto))]
-        public IActionResult PutRepeatedWords([FromBody] TextRequestDto text)
+        public IActionResult PostRepeatedWords([FromBody] TextRequestDto text)
         {
             ResponseService response = new ResponseService();
             try
             {
-                response = _service.PutRepeatedWords(text);
+                response = _service.PostRepeatedWords(text);
 
                 return response.Status ? Ok(response) : (IActionResult)BadRequest(response);
             }
             catch (Exception ex)
             {
-                response.Message = $"{nameof(PutRepeatedWords)}: {ex.Message}";
+                response.Message = $"{nameof(PostRepeatedWords)}: {ex.Message}";
 
                 return StatusCode(StatusCodes.Status500InternalServerError, response);
             }

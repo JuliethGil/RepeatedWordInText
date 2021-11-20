@@ -31,12 +31,12 @@
         }
 
         [TestMethod]
-        public void Put_ExpectdSetup_Ok()
+        public void Post_ExpectdSetup_Ok()
         {
-            _mockService.Setup(x => x.PutRepeatedWords(It.IsAny<TextRequestDto>())).Returns(ValidateTextStub.ResponseService);
+            _mockService.Setup(x => x.PostRepeatedWords(It.IsAny<TextRequestDto>())).Returns(ValidateTextStub.ResponseService);
 
             var controller = Controller();
-            var result = controller.PutRepeatedWords(ValidateTextStub.TextRequestDto);
+            var result = controller.PostRepeatedWords(ValidateTextStub.TextRequestDto);
 
             var okResult = result as ObjectResult;
             Assert.AreEqual(StatusCodes.Status200OK, okResult.StatusCode);
@@ -46,12 +46,12 @@
         }
 
         [TestMethod]
-        public void Put_ExpectdSetup_BadRequest()
+        public void Post_ExpectdSetup_BadRequest()
         {
-            _mockService.Setup(x => x.PutRepeatedWords(It.IsAny<TextRequestDto>())).Returns(ValidateTextStub.ResponseServiceError);
+            _mockService.Setup(x => x.PostRepeatedWords(It.IsAny<TextRequestDto>())).Returns(ValidateTextStub.ResponseServiceError);
 
             var controller = Controller();
-            var result = controller.PutRepeatedWords(ValidateTextStub.TextRequestDtoError);
+            var result = controller.PostRepeatedWords(ValidateTextStub.TextRequestDtoError);
 
             var okResult = result as ObjectResult;
             Assert.AreEqual(StatusCodes.Status400BadRequest, okResult.StatusCode);
@@ -61,12 +61,12 @@
         }
 
         [TestMethod]
-        public void Put_ExpectdSetup_InternalServerError()
+        public void Post_ExpectdSetup_InternalServerError()
         {
-            _mockService.Setup(x => x.PutRepeatedWords(It.IsAny<TextRequestDto>())).Throws(new Exception());
+            _mockService.Setup(x => x.PostRepeatedWords(It.IsAny<TextRequestDto>())).Throws(new Exception());
 
             var controller = Controller();
-            var result = controller.PutRepeatedWords(ValidateTextStub.TextRequestDtoError);
+            var result = controller.PostRepeatedWords(ValidateTextStub.TextRequestDtoError);
 
             var okResult = result as ObjectResult;
             Assert.AreEqual(StatusCodes.Status500InternalServerError, okResult.StatusCode);

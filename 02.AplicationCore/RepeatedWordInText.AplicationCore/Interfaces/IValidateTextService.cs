@@ -10,6 +10,6 @@
         /// Get the words in a text 
         /// </summary>
         /// <param name="text">The text</param>
-        ResponseService PutRepeatedWords(TextRequestDto text);
+        ResponseService PostRepeatedWords(TextRequestDto text);
     }
 }

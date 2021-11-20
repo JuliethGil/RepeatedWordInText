@@ -13,7 +13,7 @@
 
         public ValidateTextService() { }
 
-        public ResponseService PutRepeatedWords(TextRequestDto text)
+        public ResponseService PostRepeatedWords(TextRequestDto text)
         {
             ResponseService response = new ResponseService();
             if (text == null || string.IsNullOrEmpty(text.Text))

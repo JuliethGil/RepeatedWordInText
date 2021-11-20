@@ -53,6 +53,9 @@ namespace RepeatedWordInText.Api
             app.UseCors("AllowAll");
             app.UseHttpsRedirection();
             app.UseSwagger();
+            app.UseDefaultFiles();
+            app.UseStaticFiles();
+
             app.UseSwaggerUI(options =>
             {
                 options.SwaggerEndpoint("/swagger/API Text/swagger.json", "API Text");
